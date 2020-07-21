@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
         val temperatura = root.findViewById<EditText>(R.id.editTextTextPersonName2)
         val button = root.findViewById(R.id.floatingActionButton) as FloatingActionButton
         val delete = root.findViewById(R.id.floatingActionButton2) as FloatingActionButton
+        val text = root.findViewById(R.id.textView4) as TextView
         var nucleoCalcular = ""
         spinner?.adapter = activity?.applicationContext?.let { ArrayAdapter(it, R.layout.support_simple_spinner_dropdown_item, nucleos) } as SpinnerAdapter
         spinner?.onItemSelectedListener = object :AdapterView.OnItemSelectedListener{
@@ -62,12 +63,15 @@ class HomeFragment : Fragment() {
             var temp = temperatura!!.text.toString().toDouble()
             var resultado: Double = res.times((1+ (alpha.times(temp))))
             Toast.makeText(activity, resultado.toString(), Toast.LENGTH_LONG).show();
-
+            text.visibility = View.VISIBLE
+            text.text = resultado.toString() + "ohm"
         }
 
         delete.setOnClickListener{
             resistencia.setText("")
             temperatura.setText("")
+            text.text = ""
+            text.visibility = View.INVISIBLE
             spinner.setSelection(0)
         }
 
