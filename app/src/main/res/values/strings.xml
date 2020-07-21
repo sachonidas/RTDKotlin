@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">RTDKotlin</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">RTD</string>
+    <string name="title_dashboard">NTC</string>
+    <string name="resistencia_inicial">Resistencia Inicial</string>
+    <string name="temperatura_c">Temperatura (ºC)</string>
+    <string name="temperatura_de_trabajo">Temperatura de trabajo</string>
+    <string name="selecciona_un_nucleo">Selecciona un nucleo</string>
+    <string name="calcular">Calcular</string>
+
+    <string-array name="nucleos">
+        <item>Selecciona una opción</item>
+        <item>Cobre</item>
+        <item>Platino</item>
+        <item>Niquel</item>
+    </string-array>
+
 </resources>
