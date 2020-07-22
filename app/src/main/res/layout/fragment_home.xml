@@ -73,7 +73,7 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="32dp"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
@@ -96,10 +96,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
         android:text="TextView"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton2" />
+        app:layout_constraintTop_toTopOf="@+id/floatingActionButton2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
