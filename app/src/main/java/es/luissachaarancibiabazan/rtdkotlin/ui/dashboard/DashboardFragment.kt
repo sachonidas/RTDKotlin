@@ -12,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import es.luissachaarancibiabazan.rtdkotlin.R
+import java.math.BigDecimal
+import java.math.RoundingMode
 import kotlin.math.pow
 import kotlin.math.E
 class DashboardFragment : Fragment() {
@@ -39,9 +41,10 @@ class DashboardFragment : Fragment() {
             var temp = (1 / (temperatura.text.toString().toDouble() + 273.00)) - (1 / 298.00)
             var ntc = beta.text.toString().toDouble().times(temp)
             val E: Double = E
-            var resultado = resistencia.text.toString().toDouble().times(E.pow(ntc))
+            var resultado = BigDecimal(resistencia.text.toString().toDouble().times(E.pow(ntc))).setScale(2, RoundingMode.HALF_EVEN)
             Toast.makeText(activity, resultado.toString(), Toast.LENGTH_LONG).show();
             resultadoLabel.text = resultado.toString() + " Ohm"
+            resultadoLabel.visibility = View.VISIBLE
         }
 
         delete.setOnClickListener{
